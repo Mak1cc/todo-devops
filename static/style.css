@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    color: #333;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 650px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #777;
+    font-size: 15px;
+}
+
+.task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.task-form input {
+    flex: 1;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+}
+
+.task-form input:focus {
+    border-color: #667eea;
+}
+
+.task-form button {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    background: #667eea;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.task-form button:hover {
+    background: #5366d6;
+}
+
+.tasks-section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7f7fb;
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border-left: 5px solid #667eea;
+}
+
+.task-item span {
+    font-size: 16px;
+}
+
+.delete-btn {
+    border: none;
+    background: #ff5c5c;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    background: #e04848;
+}
+
+.empty {
+    text-align: center;
+    background: #f7f7fb;
+    padding: 25px;
+    border-radius: 12px;
+    color: #777;
+}

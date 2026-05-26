@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo DevOps App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="page">
+        <div class="card">
+            <div class="header">
+                <h1>ToDo Task Manager</h1>
+                <p>Простое веб-приложение для управления задачами</p>
+            </div>
+
+            <form method="POST" class="task-form">
+                <input 
+                    type="text" 
+                    name="task" 
+                    placeholder="Введите новую задачу..."
+                    required
+                >
+                <button type="submit">Добавить</button>
+            </form>
+
+            <div class="tasks-section">
+                <h2>Список задач</h2>
+
+                {% if tasks %}
+                    <ul class="task-list">
+                        {% for task in tasks %}
+                            <li class="task-item">
+                                <span>{{ task }}</span>
+
+                                <form action="{{ url_for('delete_task', task_id=loop.index0) }}" method="POST">
+                                    <button type="submit" class="delete-btn">Удалить</button>
+                                </form>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <div class="empty">
+                        Задач пока нет. Добавьте первую задачу.
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
