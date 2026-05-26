@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    container_name: todo-devops-web
+    ports:
+      - "5000:5000"
+    restart: always
