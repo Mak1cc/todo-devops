@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-devops-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-devops
+  template:
+    metadata:
+      labels:
+        app: todo-devops
+    spec:
+      containers:
+        - name: todo-devops-container
+          image: todo-devops-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
