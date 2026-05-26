@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for
+from prometheus_client import generate_latest, CONTENT_TYPE_LATEST
 
 app = Flask(__name__)
+
 
 tasks = []
 
@@ -25,6 +27,9 @@ def delete_task(task_id):
 
     return redirect(url_for("index"))
 
+@app.route("/metrics")
+def metrics():
+    return generate_latest(), 200, {"Content-Type": CONTENT_TYPE_LATEST}
 
 @app.route("/health")
 def health():
